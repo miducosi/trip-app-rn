@@ -1,0 +1,297 @@
+{
+  "common": {
+    "appName": "TripGlide",
+    "tagline": "O teu companheiro de viagem definitivo",
+    "loading": "A carregar...",
+    "cancel": "Cancelar",
+    "reset": "Repor",
+    "success": "Sucesso",
+    "error": "Erro",
+    "search": "Pesquisar",
+    "signOut": "Terminar sessão",
+    "signOutConfirmation": "Tens a certeza de que queres terminar sessão?",
+    "language": "Idioma",
+    "english": "Inglês",
+    "portuguesePortugal": "Português (Portugal)",
+    "notifications": "Notificações",
+    "location": "Localização"
+  },
+  "home": {
+    "helloUser": "Olá, {{name}}",
+    "welcomeTitle": "Bem-vindo ao {{appName}}",
+    "loginPrompt": "Inicia sessão para aceder a todas as funcionalidades",
+    "selectNextTrip": "Escolhe a tua próxima viagem",
+    "defaultUserName": "Viajante",
+    "categories": {
+      "asia": "Ásia",
+      "europe": "Europa",
+      "southAmerica": "América do Sul",
+      "northAmerica": "América do Norte",
+      "africa": "África",
+      "oceania": "Oceânia"
+    },
+    "reviews": "{{count}} avaliação",
+    "reviews_plural": "{{count}} avaliações"
+  },
+  "login": {
+    "title": "Iniciar sessão",
+    "welcomeBack": "Bem-vindo de volta",
+    "subtitle": "Inicia sessão para continuares a tua viagem",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Introduz o teu email",
+    "passwordLabel": "Palavra-passe",
+    "passwordPlaceholder": "Introduz a tua palavra-passe",
+    "forgotPassword": "Esqueceste-te da palavra-passe?",
+    "signIn": "Iniciar sessão",
+    "signingIn": "A iniciar sessão...",
+    "dividerText": "ou",
+    "socialGoogle": "Google",
+    "socialApple": "Apple",
+    "noAccount": "Ainda não tens conta?",
+    "signUp": "Regista-te",
+    "alerts": {
+      "missingFields": "Preenche todos os campos",
+      "signUpTitle": "Registo",
+      "signUpMessage": "A funcionalidade de registo estará disponível em breve!",
+      "forgotPasswordTitle": "Recuperar palavra-passe",
+      "forgotPasswordMessage": "A reposição da palavra-passe estará disponível em breve!"
+    }
+  },
+  "settings": {
+    "title": "Definições",
+    "sections": {
+      "account": "Conta",
+      "preferences": "Preferências",
+      "app": "Aplicação"
+    },
+    "items": {
+      "profile": {
+        "title": "Perfil",
+        "subtitle": "Gere as tuas informações pessoais"
+      },
+      "paymentMethods": {
+        "title": "Métodos de pagamento",
+        "subtitle": "Gere as tuas opções de pagamento"
+      },
+      "privacySecurity": {
+        "title": "Privacidade e segurança",
+        "subtitle": "Controla as tuas definições de privacidade"
+      },
+      "notifications": {
+        "title": "Notificações",
+        "subtitle": "Gere as tuas preferências de notificações"
+      },
+      "darkMode": {
+        "title": "Modo escuro",
+        "subtitle": "Alterna entre os temas claro e escuro"
+      },
+      "locationServices": {
+        "title": "Serviços de localização",
+        "subtitle": "Permite o acesso à tua localização"
+      },
+      "language": {
+        "title": "Idioma",
+        "subtitle": "Idioma atual: {{language}}"
+      },
+      "helpSupport": {
+        "title": "Ajuda e suporte",
+        "subtitle": "Obtém ajuda e contacta o suporte"
+      },
+      "about": {
+        "title": "Sobre",
+        "subtitle": "Versão e informações da aplicação"
+      },
+      "resetOnboarding": {
+        "title": "Repor onboarding",
+        "subtitle": "Mostrar novamente o percurso de onboarding"
+      },
+      "signOut": {
+        "title": "Terminar sessão"
+      }
+    },
+    "alerts": {
+      "resetOnboardingTitle": "Repor onboarding",
+      "resetOnboardingMessage": "Isto vai repor o percurso de onboarding e mostrá-lo novamente no próximo arranque. Queres continuar?",
+      "resetOnboardingSuccess": "O onboarding foi reposto. Será apresentado no próximo arranque."
+    }
+  },
+  "profile": {
+    "title": "Perfil",
+    "edit": "Editar perfil",
+    "stats": {
+      "trips": "Viagens",
+      "countries": "Países",
+      "reviews": "Avaliações"
+    },
+    "sections": {
+      "personalInformation": "Informações pessoais",
+      "travelPreferences": "Preferências de viagem",
+      "account": "Conta"
+    },
+    "items": {
+      "personalDetails": {
+        "title": "Detalhes pessoais",
+        "subtitle": "Nome, idade e contacto"
+      },
+      "addresses": {
+        "title": "Moradas",
+        "subtitle": "Moradas de casa e do trabalho"
+      },
+      "paymentMethods": {
+        "title": "Métodos de pagamento",
+        "subtitle": "Cartões de crédito e opções de pagamento"
+      },
+      "flightPreferences": {
+        "title": "Preferências de voo",
+        "subtitle": "Preferências de lugar, refeição e companhia aérea"
+      },
+      "accommodation": {
+        "title": "Alojamento",
+        "subtitle": "Preferências de hotel e de quarto"
+      },
+      "diningPreferences": {
+        "title": "Preferências alimentares",
+        "subtitle": "Alergias e restrições alimentares"
+      },
+      "notificationSettings": {
+        "title": "Definições de notificações",
+        "subtitle": "Gere as tuas preferências de notificações"
+      },
+      "privacySecurity": {
+        "title": "Privacidade e segurança",
+        "subtitle": "Definições de palavra-passe e segurança"
+      },
+      "helpSupport": {
+        "title": "Ajuda e suporte",
+        "subtitle": "Obtém ajuda e contacta o suporte"
+      }
+    }
+  },
+  "onboarding": {
+    "skip": "Saltar",
+    "next": "Seguinte",
+    "getStarted": "Começar",
+    "enableNotifications": "Ativar notificações",
+    "enableLocation": "Ativar localização",
+    "notificationsEnabled": "Notificações ativadas!",
+    "locationEnabled": "Localização ativada!",
+    "pages": {
+      "welcome": {
+        "title": "Bem-vindo ao {{appName}}",
+        "subtitle": "O teu companheiro de viagem definitivo",
+        "description": "Descobre destinos incríveis, planeia a viagem perfeita e vive memórias inesquecíveis com a nossa plataforma completa de viagens."
+      },
+      "explore": {
+        "title": "Explora o mundo",
+        "subtitle": "Encontra a tua próxima aventura",
+        "description": "Percorre milhares de destinos, lê opiniões de outros viajantes e descobre tesouros escondidos em todo o globo."
+      },
+      "notifications": {
+        "title": "Mantém-te atualizado",
+        "subtitle": "Não percas novidades importantes",
+        "description": "Recebe notificações em tempo real sobre reservas, alterações de voos, meteorologia e promoções exclusivas."
+      },
+      "location": {
+        "title": "Experiência personalizada",
+        "subtitle": "Recomendações baseadas na localização",
+        "description": "Permite o acesso à localização para obteres recomendações personalizadas, atrações próximas e dicas específicas para cada destino."
+      },
+      "ready": {
+        "title": "Tudo a postos!",
+        "subtitle": "Começa a tua viagem",
+        "description": "Está tudo preparado para a tua próxima aventura. Vamos explorar o mundo juntos!"
+      }
+    },
+    "alerts": {
+      "notificationsGranted": "Permissão de notificações concedida!",
+      "notificationsDenied": "Podes ativar as notificações mais tarde nas definições.",
+      "locationGranted": "Permissão de localização concedida!",
+      "locationDenied": "Podes ativar o acesso à localização mais tarde nas definições.",
+      "permissionError": "Não foi possível solicitar permissões. Tenta novamente."
+    }
+  },
+  "destination": {
+    "title": "Rio de Janeiro",
+    "country": "Brasil",
+    "description": "O Rio de Janeiro, muitas vezes chamado apenas Rio, é uma das cidades mais icónicas do Brasil, conhecida pela sua beleza natural deslumbrante, cultura vibrante e monumentos mundialmente famosos como o Cristo Redentor e o Pão de Açúcar.",
+    "readMore": "Ler mais",
+    "upcomingTours": "Próximas visitas guiadas",
+    "seeAll": "Ver tudo",
+    "reviews": "{{count}} avaliação",
+    "reviews_plural": "{{count}} avaliações",
+    "tours": {
+      "iconicBrazil": {
+        "title": "Brasil icónico",
+        "duration": "8 dias",
+        "price": "desde $659/pessoa"
+      },
+      "beachParadise": {
+        "title": "Paraíso de praia",
+        "duration": "8 dias",
+        "price": "desde $789/pessoa"
+      },
+      "mountainAdventure": {
+        "title": "Aventura na montanha",
+        "duration": "6 dias",
+        "price": "desde $549/pessoa"
+      }
+    }
+  },
+  "tour": {
+    "headerTitle": "Brasil icónico",
+    "headerSubtitle": "Qua, 21 de out - Dom, 1 de nov",
+    "title": "Aventura de 8 dias no Brasil",
+    "scheduleTime": {
+      "morning": "Manhã",
+      "afternoon": "Tarde",
+      "evening": "Noite"
+    },
+    "tabs": {
+      "schedule": "Itinerário",
+      "accommodation": "Alojamento",
+      "bookingDetails": "Detalhes da reserva"
+    },
+    "tabContent": {
+      "accommodation": "Os detalhes do alojamento serão apresentados aqui.",
+      "booking": "Os detalhes da reserva serão apresentados aqui."
+    },
+    "days": {
+      "day1": {
+        "label": "Dia 1",
+        "title": "Chegada ao Rio de Janeiro",
+        "schedule": {
+          "morning": "Chegada ao Rio de Janeiro e transfer para o hotel",
+          "afternoon": "Tempo livre para descansar ou explorar a zona",
+          "evening": "Jantar de boas-vindas num restaurante tradicional brasileiro"
+        }
+      },
+      "day2": {
+        "label": "Dia 2",
+        "title": "Destaques do Rio de Janeiro",
+        "schedule": {
+          "morning": "Visita ao Cristo Redentor",
+          "afternoon": "Explorar a Praia de Copacabana",
+          "evening": "Pôr do sol no Pão de Açúcar"
+        }
+      },
+      "day3": {
+        "label": "Dia 3",
+        "title": "Experiência cultural",
+        "schedule": {
+          "morning": "Visita ao bairro de Santa Teresa",
+          "afternoon": "Aula de samba",
+          "evening": "Noite no bairro da Lapa"
+        }
+      }
+    },
+    "bookButton": "Reservar excursão"
+  },
+  "navigation": {
+    "tabs": {
+      "home": "Início",
+      "trips": "Viagens",
+      "favorites": "Favoritos",
+      "more": "Mais"
+    }
+  }
+}

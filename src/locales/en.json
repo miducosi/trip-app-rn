@@ -1,0 +1,297 @@
+{
+  "common": {
+    "appName": "TripGlide",
+    "tagline": "Your Ultimate Travel Companion",
+    "loading": "Loading...",
+    "cancel": "Cancel",
+    "reset": "Reset",
+    "success": "Success",
+    "error": "Error",
+    "search": "Search",
+    "signOut": "Sign Out",
+    "signOutConfirmation": "Are you sure you want to sign out?",
+    "language": "Language",
+    "english": "English",
+    "portuguesePortugal": "Portuguese (Portugal)",
+    "notifications": "Notifications",
+    "location": "Location"
+  },
+  "home": {
+    "helloUser": "Hello, {{name}}",
+    "welcomeTitle": "Welcome to {{appName}}",
+    "loginPrompt": "Login to access all functionalities",
+    "selectNextTrip": "Select your next trip",
+    "defaultUserName": "Traveler",
+    "categories": {
+      "asia": "Asia",
+      "europe": "Europe",
+      "southAmerica": "South America",
+      "northAmerica": "North America",
+      "africa": "Africa",
+      "oceania": "Oceania"
+    },
+    "reviews": "{{count}} review",
+    "reviews_plural": "{{count}} reviews"
+  },
+  "login": {
+    "title": "Login",
+    "welcomeBack": "Welcome Back",
+    "subtitle": "Sign in to continue your journey",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Enter your email",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "forgotPassword": "Forgot Password?",
+    "signIn": "Sign In",
+    "signingIn": "Signing In...",
+    "dividerText": "or",
+    "socialGoogle": "Google",
+    "socialApple": "Apple",
+    "noAccount": "Don't have an account?",
+    "signUp": "Sign Up",
+    "alerts": {
+      "missingFields": "Please fill in all fields",
+      "signUpTitle": "Sign Up",
+      "signUpMessage": "Sign up functionality coming soon!",
+      "forgotPasswordTitle": "Forgot Password",
+      "forgotPasswordMessage": "Password reset functionality coming soon!"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "sections": {
+      "account": "Account",
+      "preferences": "Preferences",
+      "app": "App"
+    },
+    "items": {
+      "profile": {
+        "title": "Profile",
+        "subtitle": "Manage your personal information"
+      },
+      "paymentMethods": {
+        "title": "Payment Methods",
+        "subtitle": "Manage your payment options"
+      },
+      "privacySecurity": {
+        "title": "Privacy & Security",
+        "subtitle": "Control your privacy settings"
+      },
+      "notifications": {
+        "title": "Notifications",
+        "subtitle": "Manage your notification preferences"
+      },
+      "darkMode": {
+        "title": "Dark Mode",
+        "subtitle": "Switch between light and dark themes"
+      },
+      "locationServices": {
+        "title": "Location Services",
+        "subtitle": "Allow access to your location"
+      },
+      "language": {
+        "title": "Language",
+        "subtitle": "Current language: {{language}}"
+      },
+      "helpSupport": {
+        "title": "Help & Support",
+        "subtitle": "Get help and contact support"
+      },
+      "about": {
+        "title": "About",
+        "subtitle": "App version and information"
+      },
+      "resetOnboarding": {
+        "title": "Reset Onboarding",
+        "subtitle": "Show onboarding flow again"
+      },
+      "signOut": {
+        "title": "Sign Out"
+      }
+    },
+    "alerts": {
+      "resetOnboardingTitle": "Reset Onboarding",
+      "resetOnboardingMessage": "This will reset the onboarding flow and show it again on next app launch. Continue?",
+      "resetOnboardingSuccess": "Onboarding has been reset. It will show on next app launch."
+    }
+  },
+  "profile": {
+    "title": "Profile",
+    "edit": "Edit profile",
+    "stats": {
+      "trips": "Trips",
+      "countries": "Countries",
+      "reviews": "Reviews"
+    },
+    "sections": {
+      "personalInformation": "Personal Information",
+      "travelPreferences": "Travel Preferences",
+      "account": "Account"
+    },
+    "items": {
+      "personalDetails": {
+        "title": "Personal Details",
+        "subtitle": "Name, age, and contact info"
+      },
+      "addresses": {
+        "title": "Addresses",
+        "subtitle": "Home and work addresses"
+      },
+      "paymentMethods": {
+        "title": "Payment Methods",
+        "subtitle": "Credit cards and payment options"
+      },
+      "flightPreferences": {
+        "title": "Flight Preferences",
+        "subtitle": "Seat, meal, and airline preferences"
+      },
+      "accommodation": {
+        "title": "Accommodation",
+        "subtitle": "Hotel and room preferences"
+      },
+      "diningPreferences": {
+        "title": "Dining Preferences",
+        "subtitle": "Food allergies and dietary restrictions"
+      },
+      "notificationSettings": {
+        "title": "Notification Settings",
+        "subtitle": "Manage your notification preferences"
+      },
+      "privacySecurity": {
+        "title": "Privacy & Security",
+        "subtitle": "Password and security settings"
+      },
+      "helpSupport": {
+        "title": "Help & Support",
+        "subtitle": "Get help and contact support"
+      }
+    }
+  },
+  "onboarding": {
+    "skip": "Skip",
+    "next": "Next",
+    "getStarted": "Get Started",
+    "enableNotifications": "Enable Notifications",
+    "enableLocation": "Enable Location",
+    "notificationsEnabled": "Notifications Enabled!",
+    "locationEnabled": "Location Enabled!",
+    "pages": {
+      "welcome": {
+        "title": "Welcome to {{appName}}",
+        "subtitle": "Your Ultimate Travel Companion",
+        "description": "Discover amazing destinations, plan your perfect trip, and make unforgettable memories with our comprehensive travel platform."
+      },
+      "explore": {
+        "title": "Explore the World",
+        "subtitle": "Find Your Next Adventure",
+        "description": "Browse through thousands of destinations, read reviews from fellow travelers, and discover hidden gems around the globe."
+      },
+      "notifications": {
+        "title": "Stay Updated",
+        "subtitle": "Never Miss Important Updates",
+        "description": "Get real-time notifications about your bookings, flight changes, weather updates, and exclusive travel deals."
+      },
+      "location": {
+        "title": "Personalized Experience",
+        "subtitle": "Location-Based Recommendations",
+        "description": "Allow location access to get personalized recommendations, nearby attractions, and location-specific travel tips."
+      },
+      "ready": {
+        "title": "You're All Set!",
+        "subtitle": "Start Your Journey",
+        "description": "Everything is ready for your next adventure. Let's begin exploring the world together!"
+      }
+    },
+    "alerts": {
+      "notificationsGranted": "Notification permissions granted!",
+      "notificationsDenied": "You can enable notifications later in settings.",
+      "locationGranted": "Location permissions granted!",
+      "locationDenied": "You can enable location access later in settings.",
+      "permissionError": "Failed to request permissions. Please try again."
+    }
+  },
+  "destination": {
+    "title": "Rio de Janeiro",
+    "country": "Brazil",
+    "description": "Rio de Janeiro, often simply called Rio, is one of Brazil's most iconic cities, renowned for its stunning natural beauty, vibrant culture, and world-famous landmarks like Christ the Redeemer and Sugarloaf Mountain.",
+    "readMore": "Read more",
+    "upcomingTours": "Upcoming tours",
+    "seeAll": "See all",
+    "reviews": "{{count}} review",
+    "reviews_plural": "{{count}} reviews",
+    "tours": {
+      "iconicBrazil": {
+        "title": "Iconic Brazil",
+        "duration": "8 days",
+        "price": "from $659/person"
+      },
+      "beachParadise": {
+        "title": "Beach Paradise",
+        "duration": "8 days",
+        "price": "from $789/person"
+      },
+      "mountainAdventure": {
+        "title": "Mountain Adventure",
+        "duration": "6 days",
+        "price": "from $549/person"
+      }
+    }
+  },
+  "tour": {
+    "headerTitle": "Iconic Brazil",
+    "headerSubtitle": "Wed, Oct 21 - Sun, Nov 1",
+    "title": "8-Days Brazil Adventure",
+    "scheduleTime": {
+      "morning": "Morning",
+      "afternoon": "Afternoon",
+      "evening": "Evening"
+    },
+    "tabs": {
+      "schedule": "Tour schedule",
+      "accommodation": "Accommodation",
+      "bookingDetails": "Booking details"
+    },
+    "tabContent": {
+      "accommodation": "Accommodation details will be displayed here.",
+      "booking": "Booking details will be displayed here."
+    },
+    "days": {
+      "day1": {
+        "label": "Day 1",
+        "title": "Arrival to Rio de Janeiro",
+        "schedule": {
+          "morning": "Arrive in Rio de Janeiro and transfer to your hotel",
+          "afternoon": "Free time to relax or explore the nearby area",
+          "evening": "Welcome dinner at a traditional Brazilian restaurant"
+        }
+      },
+      "day2": {
+        "label": "Day 2",
+        "title": "Rio de Janeiro Highlights",
+        "schedule": {
+          "morning": "Visit Christ the Redeemer statue",
+          "afternoon": "Explore Copacabana Beach",
+          "evening": "Sunset at Sugarloaf Mountain"
+        }
+      },
+      "day3": {
+        "label": "Day 3",
+        "title": "Cultural Experience",
+        "schedule": {
+          "morning": "Visit Santa Teresa neighborhood",
+          "afternoon": "Samba dance lesson",
+          "evening": "Lapa neighborhood nightlife"
+        }
+      }
+    },
+    "bookButton": "Book a tour"
+  },
+  "navigation": {
+    "tabs": {
+      "home": "Home",
+      "trips": "Trips",
+      "favorites": "Favorites",
+      "more": "More"
+    }
+  }
+}
