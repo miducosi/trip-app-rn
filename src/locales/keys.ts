@@ -16,6 +16,13 @@ export const translationKeys = {
     notifications: 'common.notifications',
     location: 'common.location',
   },
+  errors: {
+    networkError: 'errors.networkError',
+    serverError: 'errors.serverError',
+    fetchError: 'errors.fetchError',
+    unknownError: 'errors.unknownError',
+    apiError: 'errors.apiError',
+  },
   home: {
     helloUser: 'home.helloUser',
     welcomeTitle: 'home.welcomeTitle',

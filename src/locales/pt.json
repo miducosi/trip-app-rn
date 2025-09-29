@@ -16,6 +16,13 @@
     "notifications": "Notificações",
     "location": "Localização"
   },
+  "errors": {
+    "networkError": "Erro de rede. Por favor verifica a tua ligação.",
+    "serverError": "Erro do servidor. Por favor tenta novamente mais tarde.",
+    "fetchError": "Falha ao obter dados.",
+    "unknownError": "Ocorreu um erro inesperado.",
+    "apiError": "Pedido à API falhou"
+  },
   "home": {
     "helloUser": "Olá, {{name}}",
     "welcomeTitle": "Bem-vindo ao {{appName}}",

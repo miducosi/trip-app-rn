@@ -16,6 +16,13 @@
     "notifications": "Notifications",
     "location": "Location"
   },
+  "errors": {
+    "networkError": "Network error. Please check your connection.",
+    "serverError": "Server error. Please try again later.",
+    "fetchError": "Failed to fetch data.",
+    "unknownError": "An unexpected error occurred.",
+    "apiError": "API request failed"
+  },
   "home": {
     "helloUser": "Hello, {{name}}",
     "welcomeTitle": "Welcome to {{appName}}",
