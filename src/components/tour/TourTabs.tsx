@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-nati
 import { useTranslation } from 'react-i18next';
 import { translationKeys } from '@/src/locales/keys';
 import { TabId } from '../../types/tour';
+import { useTheme } from '@/src/hooks/useThemeColor';
 
 interface TourTabsProps {
   activeTab: TabId;
@@ -12,6 +13,14 @@ interface TourTabsProps {
 
 export default function TourTabs({ activeTab, onTabPress, tabIds }: TourTabsProps) {
   const { t } = useTranslation();
+  const { colors } = useTheme();
+
+  const dynamicStyles = StyleSheet.create({
+    activeTabButton: {
+      ...styles.activeTabButton,
+      backgroundColor: colors.buttonPrimary,
+    },
+  });
 
   return (
     <View style={styles.tabsContainer}>
@@ -22,13 +31,13 @@ export default function TourTabs({ activeTab, onTabPress, tabIds }: TourTabsProp
             style={[
               styles.tabButton,
               activeTab === tab && styles.activeTabButton,
-              { backgroundColor: activeTab === tab ? '#333' : '#f0f0f0' }
+              { backgroundColor: activeTab === tab ? colors.buttonPrimary : colors.backgroundOverlay }
             ]}
             onPress={() => onTabPress(tab)}
           >
             <Text style={[
               styles.tabText,
-              { color: activeTab === tab ? '#fff' : '#666' }
+              { color: activeTab === tab ? colors.buttonText : colors.textSecondary }
             ]}>
               {t(translationKeys.tour.tabs[tab])}
             </Text>
@@ -51,7 +60,7 @@ const styles = StyleSheet.create({
     marginRight: 12,
   },
   activeTabButton: {
-    backgroundColor: '#333',
+    // backgroundColor will be set dynamically
   },
   tabText: {
     fontSize: 14,

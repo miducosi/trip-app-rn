@@ -18,6 +18,7 @@ import * as Location from 'expo-location';
 import { useOnboardingStore } from '../store/onboardingStore';
 import { useTranslation } from 'react-i18next';
 import { translationKeys, TranslationKey } from '@/src/locales/keys';
+import { useTheme } from '../hooks/useThemeColor';
 
 const { width: screenWidth, height: screenHeight } = Dimensions.get('window');
 
@@ -40,8 +41,8 @@ const onboardingPagesConfig: OnboardingPageConfig[] = [
     subtitleKey: translationKeys.onboarding.pages.welcome.subtitle,
     descriptionKey: translationKeys.onboarding.pages.welcome.description,
     icon: 'airplane',
-    backgroundColor: '#1E90FF',
-    textColor: '#fff',
+    backgroundColor: 'onboardingBlue',
+    textColor: 'textWhite',
   },
   {
     id: 'explore',
@@ -49,8 +50,8 @@ const onboardingPagesConfig: OnboardingPageConfig[] = [
     subtitleKey: translationKeys.onboarding.pages.explore.subtitle,
     descriptionKey: translationKeys.onboarding.pages.explore.description,
     icon: 'globe',
-    backgroundColor: '#32CD32',
-    textColor: '#fff',
+    backgroundColor: 'onboardingGreen',
+    textColor: 'textWhite',
   },
   {
     id: 'notifications',
@@ -58,8 +59,8 @@ const onboardingPagesConfig: OnboardingPageConfig[] = [
     subtitleKey: translationKeys.onboarding.pages.notifications.subtitle,
     descriptionKey: translationKeys.onboarding.pages.notifications.description,
     icon: 'notifications',
-    backgroundColor: '#FF6B6B',
-    textColor: '#fff',
+    backgroundColor: 'onboardingRed',
+    textColor: 'textWhite',
     showPermissionButton: true,
     permissionType: 'notifications',
   },
@@ -69,8 +70,8 @@ const onboardingPagesConfig: OnboardingPageConfig[] = [
     subtitleKey: translationKeys.onboarding.pages.location.subtitle,
     descriptionKey: translationKeys.onboarding.pages.location.description,
     icon: 'location',
-    backgroundColor: '#9B59B6',
-    textColor: '#fff',
+    backgroundColor: 'onboardingPurple',
+    textColor: 'textWhite',
     showPermissionButton: true,
     permissionType: 'location',
   },
@@ -80,8 +81,8 @@ const onboardingPagesConfig: OnboardingPageConfig[] = [
     subtitleKey: translationKeys.onboarding.pages.ready.subtitle,
     descriptionKey: translationKeys.onboarding.pages.ready.description,
     icon: 'checkmark-circle',
-    backgroundColor: '#2ECC71',
-    textColor: '#fff',
+    backgroundColor: 'onboardingTeal',
+    textColor: 'textWhite',
   },
 ];
 
@@ -96,6 +97,7 @@ export default function OnboardingScreen() {
     isCompleted 
   } = useOnboardingStore();
   const { t } = useTranslation();
+  const { colors } = useTheme();
 
   useEffect(() => {
     // Check if onboarding is already completed
@@ -168,8 +170,15 @@ export default function OnboardingScreen() {
   const permissionGranted =
     isPermissionPage && permissionType ? permissionsGranted[permissionType] : false;
 
-  const backgroundColor = currentPageConfig.backgroundColor ?? '#1E90FF';
-  const textColor = currentPageConfig.textColor ?? '#fff';
+  const backgroundColor = colors[currentPageConfig.backgroundColor as keyof typeof colors] ?? colors.onboardingBlue;
+  const textColor = colors[currentPageConfig.textColor as keyof typeof colors] ?? colors.textWhite;
+
+  const dynamicStyles = StyleSheet.create({
+    skipButton: {
+      ...styles.skipButton,
+      backgroundColor: colors.tourGlassOverlay,
+    },
+  });
   const title = t(currentPageConfig.titleKey, {
     appName: t(translationKeys.common.appName),
   });
@@ -190,10 +199,10 @@ export default function OnboardingScreen() {
 
   if (isLoading) {
     return (
-      <SafeAreaView style={[styles.container, { backgroundColor: '#1E90FF' }]}>
+      <SafeAreaView style={[styles.container, { backgroundColor: colors.onboardingBlue }]}>
         <View style={styles.loadingContainer}>
-          <ActivityIndicator size="large" color="#fff" />
-          <Text style={[styles.loadingText, { color: '#fff' }]}>
+          <ActivityIndicator size="large" color={colors.textWhite} />
+          <Text style={[styles.loadingText, { color: colors.textWhite }]}>
             {t(translationKeys.common.loading)}
           </Text>
         </View>
@@ -207,7 +216,7 @@ export default function OnboardingScreen() {
       
       {/* Skip Button */}
       {!isLastPage && (
-        <TouchableOpacity style={styles.skipButton} onPress={handleSkip}>
+        <TouchableOpacity style={dynamicStyles.skipButton} onPress={handleSkip}>
           <Text style={[styles.skipText, { color: textColor }]}>
             {t(translationKeys.onboarding.skip)}
           </Text>
@@ -340,7 +349,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingVertical: 8,
     borderRadius: 20,
-    backgroundColor: 'rgba(255,255,255,0.2)',
   },
   skipText: {
     fontSize: 16,

@@ -4,6 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { translationKeys } from '@/src/locales/keys';
 import { TourDay } from '../../types/tour';
+import { useTheme } from '@/src/hooks/useThemeColor';
 
 interface TourScheduleProps {
   tourDays: TourDay[];
@@ -19,6 +20,27 @@ export default function TourSchedule({
   onToggleDayExpansion,
 }: TourScheduleProps) {
   const { t } = useTranslation();
+  const { colors } = useTheme();
+
+  const dynamicStyles = StyleSheet.create({
+    dayCard: {
+      ...styles.dayCard,
+      backgroundColor: colors.cardBackground,
+      shadowColor: colors.shadow,
+    },
+    dayNumber: {
+      ...styles.dayNumber,
+      color: colors.textSecondary,
+    },
+    daySchedule: {
+      ...styles.daySchedule,
+      borderTopColor: colors.border,
+    },
+    scheduleTime: {
+      ...styles.scheduleTime,
+      color: colors.textSecondary,
+    },
+  });
 
   return (
     <View style={styles.scheduleContainer}>
@@ -29,7 +51,7 @@ export default function TourSchedule({
       </View>
 
       {tourDays.map((day) => (
-        <View key={day.id} style={styles.dayCard}>
+        <View key={day.id} style={dynamicStyles.dayCard}>
           <TouchableOpacity 
             style={styles.dayHeader}
             onPress={() => onToggleDayExpansion(day.id)}
@@ -39,23 +61,23 @@ export default function TourSchedule({
             </View>
             
             <View style={styles.dayInfo}>
-              <Text style={styles.dayNumber}>{day.label}</Text>
+              <Text style={dynamicStyles.dayNumber}>{day.label}</Text>
               <Text style={[styles.dayTitle, { color: textColor }]}>{day.title}</Text>
             </View>
             
             <Ionicons 
               name={expandedDays.includes(day.id) ? 'chevron-up' : 'chevron-down'} 
               size={20} 
-              color="#666" 
+              color={colors.textSecondary} 
             />
           </TouchableOpacity>
           
           {expandedDays.includes(day.id) && (
-            <View style={styles.daySchedule}>
+            <View style={dynamicStyles.daySchedule}>
               {day.schedule.map((item, index) => (
                 <View key={index} style={styles.scheduleItem}>
-                  <Text style={styles.scheduleTime}>{item.time}</Text>
-                  <Text style={[styles.scheduleActivity, { color: textColor }]}>{item.activity}</Text>
+                  <Text style={dynamicStyles.scheduleTime}>{item.time}</Text>
+                  <Text style={[styles.scheduleActivity, { color: colors.textPrimary }]}>{item.activity}</Text>
                 </View>
               ))}
             </View>
@@ -78,12 +100,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   dayCard: {
-    backgroundColor: '#fff',
     borderRadius: 16,
     marginBottom: 16,
     overflow: 'hidden',
     elevation: 2,
-    shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 4,
@@ -109,7 +129,6 @@ const styles = StyleSheet.create({
   },
   dayNumber: {
     fontSize: 14,
-    color: '#666',
     marginBottom: 4,
   },
   dayTitle: {
@@ -120,14 +139,12 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingBottom: 16,
     borderTopWidth: 1,
-    borderTopColor: '#f0f0f0',
   },
   scheduleItem: {
     marginTop: 12,
   },
   scheduleTime: {
     fontSize: 14,
-    color: '#666',
     marginBottom: 4,
     fontWeight: '500',
   },

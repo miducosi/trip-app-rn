@@ -10,6 +10,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { translationKeys } from '@/src/locales/keys';
+import { useTheme } from '@/src/hooks/useThemeColor';
 
 interface TabItem {
   id: keyof typeof translationKeys.navigation.tabs;
@@ -38,10 +39,24 @@ export default function FloatingTabBar({ activeTab, onTabPress, visible }: Float
   const opacity = useRef(new Animated.Value(1)).current;
   const { t } = useTranslation();
   const insets = useSafeAreaInsets();
+  const { colors } = useTheme();
 
-  const backgroundColor = '#fff';
-  const activeColor = '#333';
-  const inactiveColor = '#666';
+  const backgroundColor = colors.backgroundPrimary;
+  const activeColor = colors.buttonPrimary;
+  const inactiveColor = colors.textSecondary;
+  
+  const dynamicStyles = StyleSheet.create({
+    container: {
+      ...styles.container,
+      backgroundColor,
+      shadowColor: colors.shadow,
+    },
+    activeIconContainer: {
+      ...styles.activeIconContainer,
+      backgroundColor: colors.buttonPrimary,
+      shadowColor: colors.shadow,
+    },
+  });
 
   useEffect(() => {
     const animations = [];
@@ -90,9 +105,8 @@ export default function FloatingTabBar({ activeTab, onTabPress, visible }: Float
   return (
     <Animated.View 
       style={[
-        styles.container, 
+        dynamicStyles.container, 
         { 
-          backgroundColor,
           transform: [{ translateY }],
           opacity,
           bottom: 30 + insets.bottom,
@@ -109,12 +123,12 @@ export default function FloatingTabBar({ activeTab, onTabPress, visible }: Float
         >
           <View style={[
             styles.iconContainer,
-            activeTab === tab.id && styles.activeIconContainer
+            activeTab === tab.id && dynamicStyles.activeIconContainer
           ]}>
             <Ionicons
               name={tab.icon}
               size={24}
-              color={activeTab === tab.id ? '#fff' : inactiveColor}
+              color={activeTab === tab.id ? colors.textWhite : inactiveColor}
             />
           </View>
         </TouchableOpacity>
@@ -135,7 +149,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     paddingHorizontal: 20,
     elevation: 8,
-    shadowColor: '#000',
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.15,
     shadowRadius: 8,
@@ -153,10 +166,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   activeIconContainer: {
-    backgroundColor: '#333',
     borderRadius: 22,
     elevation: 4,
-    shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.25,
     shadowRadius: 4,

@@ -12,7 +12,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { translationKeys, SupportedLanguage } from '@/src/locales/keys';
 import { supportedLanguages } from '@/src/utils/i18n';
-import { useTheme } from '../hooks/useThemeColor';
+import { useTheme } from '@/src/hooks/useThemeColor';
 
 interface LanguageBottomSheetProps {
   visible: boolean;
@@ -32,9 +32,25 @@ export default function LanguageBottomSheet({
   const { t } = useTranslation();
   const { colors } = useTheme();
 
-  const backgroundColor = colors.background;
-  const textColor = colors.text;
+  const backgroundColor = colors.backgroundPrimary;
+  const textColor = colors.textPrimary;
   const cardBackground = colors.cardBackground;
+
+  const dynamicStyles = StyleSheet.create({
+    overlay: {
+      ...styles.overlay,
+      backgroundColor: colors.backgroundOverlayDark,
+    },
+    header: {
+      ...styles.header,
+      backgroundColor: cardBackground,
+      borderBottomColor: colors.border,
+    },
+    handle: {
+      ...styles.handle,
+      backgroundColor: colors.textSecondary,
+    },
+  });
 
   return (
     <Modal
@@ -43,13 +59,13 @@ export default function LanguageBottomSheet({
       animationType="slide"
       onRequestClose={onClose}
     >
-      <Pressable style={styles.overlay} onPress={onClose}>
+      <Pressable style={dynamicStyles.overlay} onPress={onClose}>
         <View style={styles.overlayContent}>
           <Pressable onPress={(e) => e.stopPropagation()}>
             <View style={[styles.bottomSheet, { backgroundColor: cardBackground }]}>
               {/* Header */}
-              <View style={styles.header}>
-                <View style={styles.handle} />
+              <View style={dynamicStyles.header}>
+                <View style={dynamicStyles.handle} />
                 <Text style={[styles.title, { color: textColor }]}>
                   {t(translationKeys.common.language)}
                 </Text>
@@ -68,7 +84,7 @@ export default function LanguageBottomSheet({
                       currentLanguage === language.code && styles.selectedLanguageOption,
                       { 
                         backgroundColor: currentLanguage === language.code 
-                          ? (colors.isDark ? '#333' : '#f0f0f0') 
+                          ? (colors.isDark ? colors.backgroundSecondary : colors.backgroundOverlay) 
                           : 'transparent' 
                       }
                     ]}
@@ -85,7 +101,7 @@ export default function LanguageBottomSheet({
                     </View>
                     
                     {currentLanguage === language.code && (
-                      <Ionicons name="checkmark" size={20} color="#007AFF" />
+                      <Ionicons name="checkmark" size={20} color={colors.accent} />
                     )}
                   </TouchableOpacity>
                 ))}
@@ -101,7 +117,6 @@ export default function LanguageBottomSheet({
 const styles = StyleSheet.create({
   overlay: {
     flex: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
     justifyContent: 'flex-end',
   },
   overlayContent: {
@@ -117,12 +132,10 @@ const styles = StyleSheet.create({
     paddingVertical: 16,
     paddingHorizontal: 20,
     borderBottomWidth: 1,
-    borderBottomColor: '#f0f0f0',
   },
   handle: {
     width: 36,
     height: 4,
-    backgroundColor: '#d1d1d1',
     borderRadius: 2,
     marginBottom: 12,
   },

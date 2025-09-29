@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { translationKeys } from '@/src/locales/keys';
+import { useTheme } from '@/src/hooks/useThemeColor';
 
 interface TourHeaderProps {
   backgroundColor: string;
@@ -20,27 +21,43 @@ export default function TourHeader({
   onFavoritePress,
 }: TourHeaderProps) {
   const { t } = useTranslation();
+  const { colors } = useTheme();
+
+  const dynamicStyles = StyleSheet.create({
+    backButton: {
+      ...styles.backButton,
+      backgroundColor: colors.backgroundOverlay,
+    },
+    headerSubtitle: {
+      ...styles.headerSubtitle,
+      color: colors.textSecondary,
+    },
+    favoriteButton: {
+      ...styles.favoriteButton,
+      backgroundColor: colors.backgroundOverlay,
+    },
+  });
 
   return (
     <View style={[styles.header, { backgroundColor }]}>
-      <TouchableOpacity style={styles.backButton} onPress={onBackPress}>
-        <Ionicons name="chevron-back" size={24} color="#000" />
+      <TouchableOpacity style={dynamicStyles.backButton} onPress={onBackPress}>
+        <Ionicons name="chevron-back" size={24} color={colors.textPrimary} />
       </TouchableOpacity>
       
       <View style={styles.headerCenter}>
         <Text style={[styles.headerTitle, { color: textColor }]}>
           {t(translationKeys.tour.headerTitle)}
         </Text>
-        <Text style={styles.headerSubtitle}>
+        <Text style={dynamicStyles.headerSubtitle}>
           {t(translationKeys.tour.headerSubtitle)}
         </Text>
       </View>
       
-      <TouchableOpacity style={styles.favoriteButton} onPress={onFavoritePress}>
+      <TouchableOpacity style={dynamicStyles.favoriteButton} onPress={onFavoritePress}>
         <Ionicons 
           name={isFavorite ? 'heart' : 'heart-outline'} 
           size={24} 
-          color={isFavorite ? '#ff4757' : '#000'} 
+          color={isFavorite ? colors.favorite : colors.textPrimary} 
         />
       </TouchableOpacity>
     </View>
@@ -59,7 +76,6 @@ const styles = StyleSheet.create({
     width: 44,
     height: 44,
     borderRadius: 22,
-    backgroundColor: '#f0f0f0',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -74,13 +90,11 @@ const styles = StyleSheet.create({
   },
   headerSubtitle: {
     fontSize: 14,
-    color: '#666',
   },
   favoriteButton: {
     width: 44,
     height: 44,
     borderRadius: 22,
-    backgroundColor: '#f0f0f0',
     justifyContent: 'center',
     alignItems: 'center',
   },

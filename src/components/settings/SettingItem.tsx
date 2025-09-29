@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { useTheme } from '../hooks/useThemeColor';
+import { useTheme } from '@/src/hooks/useThemeColor';
 
 interface SettingItemProps {
   icon: keyof typeof Ionicons.glyphMap;
@@ -27,25 +27,41 @@ export default function SettingItem({
   const textColor = colors.text;
   const cardBackground = colors.cardBackground;
 
+  const dynamicStyles = StyleSheet.create({
+    settingItem: {
+      ...styles.settingItem,
+      backgroundColor: cardBackground,
+      shadowColor: colors.shadow,
+    },
+    iconContainer: {
+      ...styles.iconContainer,
+      backgroundColor: colors.backgroundOverlay,
+    },
+    settingSubtitle: {
+      ...styles.settingSubtitle,
+      color: colors.textSecondary,
+    },
+  });
+
   return (
     <TouchableOpacity 
-      style={[styles.settingItem, { backgroundColor: cardBackground }]}
+      style={dynamicStyles.settingItem}
       onPress={onPress}
       disabled={!onPress || !!rightComponent}
     >
       <View style={styles.settingLeft}>
-        <View style={styles.iconContainer}>
-          <Ionicons name={icon} size={24} color="#666" />
+        <View style={dynamicStyles.iconContainer}>
+          <Ionicons name={icon} size={24} color={colors.textSecondary} />
         </View>
         <View style={styles.settingText}>
           <Text style={[styles.settingTitle, { color: textColor }]}>{title}</Text>
           {subtitle && (
-            <Text style={styles.settingSubtitle}>{subtitle}</Text>
+            <Text style={dynamicStyles.settingSubtitle}>{subtitle}</Text>
           )}
         </View>
       </View>
       {rightComponent || (
-        <Ionicons name="chevron-forward" size={20} color="#ccc" />
+        <Ionicons name="chevron-forward" size={20} color={colors.textTertiary} />
       )}
     </TouchableOpacity>
   );
@@ -61,7 +77,6 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     marginBottom: 8,
     elevation: 2,
-    shadowColor: '#000',
     shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.1,
     shadowRadius: 2,
@@ -75,7 +90,6 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     borderRadius: 20,
-    backgroundColor: 'rgba(0,0,0,0.05)',
     alignItems: 'center',
     justifyContent: 'center',
     marginRight: 16,
@@ -90,7 +104,6 @@ const styles = StyleSheet.create({
   },
   settingSubtitle: {
     fontSize: 12,
-    color: '#666',
   },
 });
 
