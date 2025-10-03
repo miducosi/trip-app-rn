@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
+import { Text } from '@/src/components/common';
 import { BaseToast, ErrorToast, ToastConfig } from 'react-native-toast-message';
 import { Ionicons } from '@expo/vector-icons';
 

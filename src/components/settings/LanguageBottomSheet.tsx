@@ -1,13 +1,13 @@
 import React from 'react';
 import {
   View,
-  Text,
   TouchableOpacity,
   StyleSheet,
   Modal,
   Dimensions,
   Pressable,
 } from 'react-native';
+import { Text } from '@/src/components';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { translationKeys, SupportedLanguage } from '@/src/locales/keys';

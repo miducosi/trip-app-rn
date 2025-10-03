@@ -1,11 +1,11 @@
 import React from 'react';
 import {
   View,
-  Text,
   StyleSheet,
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
+import { Text } from '@/src/components';
 import { useTranslation } from 'react-i18next';
 import { translationKeys } from '@/src/locales/keys';
 import { useTheme } from '@/src/hooks/useThemeColor';

@@ -2,6 +2,23 @@
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
+## ✨ Features
+
+### 🎨 Dynamic Font Loading System
+
+This app includes a powerful dynamic font loading system that automatically discovers and applies custom fonts throughout the app.
+
+**Quick Start:**
+1. Add `.ttf` or `.otf` files to `assets/fonts/`
+2. Configure in `src/config/fonts.config.ts`
+3. Use `<Text>` from `@/src/components` instead of `react-native`
+
+📖 **[Read the Font Quick Start Guide](./FONTS_QUICKSTART.md)**
+
+For detailed documentation:
+- `assets/fonts/README.md` - Complete usage guide
+- `docs/FONTS_SETUP.md` - Technical documentation
+
 ## Get started
 
 1. Install dependencies

@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { View, TouchableOpacity, StyleSheet } from 'react-native';
+import { Text } from '@/src/components/common';
 import { useTranslation } from 'react-i18next';
 import { translationKeys } from '@/src/locales/keys';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';

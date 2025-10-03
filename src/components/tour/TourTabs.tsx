@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
+import { View, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
+import { Text } from '@/src/components/common';
 import { useTranslation } from 'react-i18next';
 import { translationKeys } from '@/src/locales/keys';
 import { TabId } from '../../types/tour';

@@ -8,6 +8,9 @@ import { useSettingsStore } from "@/src/store/settingsStore";
 import Toast from 'react-native-toast-message';
 import { showErrorToast } from "@/src/utils/toast";
 import { toastConfig } from "@/src/utils/toastConfig";
+import { useCustomFont } from "@/src/hooks/useCustomFont";
+import { View } from "react-native";
+import { Text } from "@/src/components";
 
 // Create QueryClient with global error handling
 const queryClient = new QueryClient({
@@ -32,7 +35,19 @@ const queryClient = new QueryClient({
 
 export default function RootLayout() {
   const { language } = useSettingsStore.getState();
+  const { fontsLoaded } = useCustomFont();
+  
   changeAppLanguage(language);
+  
+  // Wait for custom font to load
+  if (!fontsLoaded) {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text>Loading...</Text>
+      </View>
+    );
+  }
+
   return (
     <SafeAreaProvider>
       <QueryClientProvider client={queryClient}>
@@ -52,3 +67,4 @@ export default function RootLayout() {
     </SafeAreaProvider>
   );
 }
+

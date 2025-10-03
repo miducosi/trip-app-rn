@@ -16,3 +16,6 @@ export * from './settings';
 // Tour Components
 export * from './tour';
 
+// Common Components
+export * from './common';
+

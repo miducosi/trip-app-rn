@@ -1,9 +1,9 @@
 import React from 'react';
 import {
   View,
-  Text,
   StyleSheet,
 } from 'react-native';
+import { Text } from '@/src/components';
 import { useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import { translationKeys } from '@/src/locales/keys';

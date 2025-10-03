@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import {
   View,
-  Text,
   StyleSheet,
   SafeAreaView,
   StatusBar,
   ActivityIndicator,
 } from 'react-native';
+import { Text } from '@/src/components';
 import { useRouter } from 'expo-router';
 import { useOnboardingStore } from '../store/onboardingStore';
 import { useTheme } from '../hooks/useThemeColor';
